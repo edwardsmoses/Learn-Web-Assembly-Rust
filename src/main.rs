@@ -19,9 +19,15 @@ fn main() {
         println!("No free shipping");
     }
 
-    match free_shipping {
-        true => total = total + 0,
-        false => total = total + 5,
+    total = match free_shipping {
+        true => total + 0,
+        false => total + 5,
+    };
+
+    match total  {
+        1 => println!("1"),
+        2 => println!("2"),
+        _ => println!("No match found"),
     }
 
     println!("Total: {:?}", total);
