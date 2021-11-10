@@ -34,4 +34,17 @@ fn main() {
 
     let items: [i32;6] = [1,2,3,4,5,9];
     println!("{:?}", items);
+
+    let vector_items = vec![1,2,3,4,5,9];
+    println!("{:?}", vector_items);
+
+    let mut second_vector_items = Vec::new();
+    second_vector_items.push(1);
+    second_vector_items.push(2);
+    second_vector_items.push(3);
+    second_vector_items.push(4);
+    second_vector_items.push(5);
+
+    println!("{:?}", second_vector_items);
+
 }
