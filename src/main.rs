@@ -9,6 +9,14 @@ return num_one + num_two;
 }
 
 
+fn print_balance(account: &BankAccount){
+    println!("Your balance is {}", account.balance);
+}
+
+fn print_verified(account: &BankAccount){
+    println!("Your are a verified user: {}", account.verified);
+}
+
 fn main() {
     let mut total = add(10, 5);
     let mut free_shipping = false;
@@ -61,4 +69,6 @@ fn main() {
     println!("{:?}", my_account.balance);
     println!("{:?}", my_account.verified);
 
+    print_balance(&my_account);
+    print_verified(&my_account);
 }
