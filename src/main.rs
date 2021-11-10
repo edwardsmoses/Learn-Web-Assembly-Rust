@@ -1,3 +1,9 @@
+
+struct BankAccount {
+    balance: i32,
+    verified: bool
+}
+
 fn add (num_one: i32, num_two: i32) -> i32 {
 return num_one + num_two;
 }
@@ -46,5 +52,13 @@ fn main() {
     second_vector_items.push(5);
 
     println!("{:?}", second_vector_items);
+
+    let my_account = BankAccount {
+        balance: 100,
+        verified: true
+    };
+
+    println!("{:?}", my_account.balance);
+    println!("{:?}", my_account.verified);
 
 }
