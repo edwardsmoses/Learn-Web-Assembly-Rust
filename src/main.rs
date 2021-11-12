@@ -17,6 +17,13 @@ fn print_verified(account: &BankAccount){
     println!("Your are a verified user: {}", account.verified);
 }
 
+fn is_verified(account: &BankAccount) -> Result<bool, bool> {
+    match account.verified{
+        true => Ok(true),
+        false => Err(false),
+    }
+} 
+
 fn main() {
     let mut total = add(10, 5);
     let mut free_shipping = false;
@@ -63,7 +70,7 @@ fn main() {
 
     let my_account = BankAccount {
         balance: 100,
-        verified: true
+        verified: false
     };
 
     println!("{:?}", my_account.balance);
@@ -71,4 +78,7 @@ fn main() {
 
     print_balance(&my_account);
     print_verified(&my_account);
+
+    let verification_status = is_verified(&my_account);
+    println!("{:?}", verification_status.expect("There is an error to wrap result"));
 }
